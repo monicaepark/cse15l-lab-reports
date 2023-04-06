@@ -2,7 +2,8 @@
 ## slightly smaller heading
 ---
 let me *emphasize* some points, some even **more**
-/n lets link the group form /n
+
+lets link the group form
 [Link](https://docs.google.com/forms/d/e/1FAIpQLSeZmbB_j5kICR8PNX6VF2P3Zn-CRAYDbNqh5aMGScibwBtemg/viewform)
 > write fancy blockquotes
 not everything is fancy quotes
