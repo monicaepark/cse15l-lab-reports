@@ -6,7 +6,7 @@ In this week's lab report, I will be walking through how to install VScode, remo
 ## Part 1: Installing VScode
 To start, install VS code by visiting [Link](https://code.visualstudio.com/download). Download the appropriate package depending on your computer.
 
-![Image][1a installing vscode.png]
+![Image](1a installing vscode.png)
 
 When you download and finish installing the package, the app should open likeso:
 
