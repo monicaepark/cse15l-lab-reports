@@ -14,7 +14,7 @@ When you download and finish installing the package, the app should open likeso:
 
 ## Part 2: Remotely Connecting
 
-Next, you will need to locate your ieng6 username by entering your student id and PID at [Link](https://sdacs.ucsd.edu/~icc/index.php)
+Next, you will need to locate your ieng6 username by entering your student id and PID at [Link](https://sdacs.ucsd.edu/~icc/index.php).
 Once you enter these details, scroll down to "Additional Accounts" and make note of the student id (starting with "cs15lsp23") and click on the button, which allows you to reset the password with the global password change tool.
 
 ![Image](2a pw.png)
