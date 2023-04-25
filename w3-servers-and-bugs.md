@@ -51,7 +51,8 @@ public void testReverseInPlace() {
 ```
 
 These two tests show a symptom of the buggy code, which is that an array of 3 or more elements fails to "reverse" the elements in place, past the halfway mark of the array. This makes sense when looking at the code, since the code loops through the elements one by one and changes the items, and so the elements that were changed in the first half of the loop are then reflected in the second half, so that the later elements do not get replaced by elements of the original array, but elements after the array is already flipped. In effect, the second half of the array stays the same. As a fix, I created a temp variable to store the original element in the array and updated the second half item with this temporary element, rather than the new, flipped array. Here's the buggy code from before:
-```static void reverseInPlace(int[] arr) {
+```
+static void reverseInPlace(int[] arr) {
     for(int i = 0; i < arr.length; i += 1) {
       arr[i] = arr[arr.length - i - 1];
     }
