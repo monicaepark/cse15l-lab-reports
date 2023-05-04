@@ -73,7 +73,7 @@ static void reverseInPlace(int[] arr) {
 
 You can also see the fixed code and test in the images below :) This fix addresses the issue, because it stores the initial value of a first-half element in the array and uses it to update a second-half element in the array, rather than letting the loop alter all the elements in the first half first, letting these updated elements (rather than the original elements) be used to erroneously update elements in the second half of the array.
 ![Image](w2/w2-correction.png)
-![Image](w2/w2-8arraytest.png)
+![Image](w2/w2-correction2.png)
 
 
 ## Part 3: some things I learned in our week 2-3 labs
