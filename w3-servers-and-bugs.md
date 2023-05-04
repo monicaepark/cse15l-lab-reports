@@ -64,15 +64,15 @@ And here's fixed code that implements the temporary variable, `temp`:
 static void reverseInPlace(int[] arr) {
     
     for(int i = 0; i < arr.length/2; i += 1) {
-      int temp = i+1;
-      arr[i] = arr[arr.length - i - 1];
-      arr[arr.length - i -1] = temp;
+      int temp = arr[i];
+      arr[i] = arr[arr.length-1-i];
+      arr[arr.length-1-i] = temp;
     }
 }
 ```
 
 You can also see the fixed code and test in the images below :) This fix addresses the issue, because it stores the initial value of a first-half element in the array and uses it to update a second-half element in the array, rather than letting the loop alter all the elements in the first half first, letting these updated elements (rather than the original elements) be used to erroneously update elements in the second half of the array.
-![Image](w2/w2-7arrayexample.png)
+![Image](w2/w2-correction.png)
 ![Image](w2/w2-8arraytest.png)
 
 
