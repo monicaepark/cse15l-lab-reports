@@ -65,6 +65,87 @@ monicapark@Monicas-MacBook-Air docsearch % find ./technical -maxdepth 1
 ./technical/biomed
 ./technical/911report
 ```
+Note that the output for `-maxdepth 1` and `-depth 1` look nearly identical, but maxdepth also includes `./technical` since it is inclusive of all depths from 0 (./technical) to 1, while depth is exclusive to directories at a depth of 1 (excludes depth 0).
 
 ## part 4: -type
+`-type` allows us to search for different types of files, but is a little trickier to use because the type of file is specified by specific letters that we should know beforehand. I searched for `man find` again to look for specific types, and found this explanation:
+```
+-type t
+             True if the file is of the specified type.  Possible file types are as follows:
+
+             b       block special
+             c       character special
+             d       directory
+             f       regular file
+             l       symbolic link
+             p       FIFO
+             s       socket
+```
+I then tested out the directory (d) and regular file (f) commands. First, I ran the command with directories to find just the directories within technical. There were surprisingly a few number of folders, and I think I would use this command in the future when trying to see a quick overview of what groups of files I have.
+```
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -type d
+./technical
+./technical/government
+./technical/government/About_LSC
+./technical/government/Env_Prot_Agen
+./technical/government/Alcohol_Problems
+./technical/government/Gen_Account_Office
+./technical/government/Post_Rate_Comm
+./technical/government/Media
+./technical/plos
+./technical/biomed
+./technical/911report
+```
+I then ran the command with f, and the names of files overflowed the terminal. I narrowed down my search by combining the -depth command from earlier, and found that technical stores ONLY directories, and no files:
+```
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -depth 1  -type f
+```
+Based on this output, I think `-type f` is not as useful of a command in directories where the majority of items are files, and the files will crowd the terminal. This could be more useful though if trying to narrow down a search with many other filters.
+
+
 ## part 5: -print
+Finally, I explored the command `-print`! I was a little confused at first, because all the results seemed to be printing out to the terminal just fine. For example, when I ran the `-type d` command from earlier on its own, and also with print, the outputs looked the same:
+```
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -type d                 
+./technical
+./technical/government
+./technical/government/About_LSC
+./technical/government/Env_Prot_Agen
+./technical/government/Alcohol_Problems
+./technical/government/Gen_Account_Office
+./technical/government/Post_Rate_Comm
+./technical/government/Media
+./technical/plos
+./technical/biomed
+./technical/911report
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -type d -print          
+./technical
+./technical/government
+./technical/government/About_LSC
+./technical/government/Env_Prot_Agen
+./technical/government/Alcohol_Problems
+./technical/government/Gen_Account_Office
+./technical/government/Post_Rate_Comm
+./technical/government/Media
+./technical/plos
+./technical/biomed
+./technical/911report
+```
+I then did a google search and found another helpful stack overflow [thread](https://unix.stackexchange.com/questions/197824/what-is-the-difference-between-find-and-find-print) on the purpose of the -print action. I found this helpful response by Stéphane Chazelas:
+![Image](/w5/w5-stack2.png)
+This taught me that `-print` is actually an internal action! There are other versions of print I can type to override the default print, such as `-print0`, which I tried here:
+```
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -type d -print0
+./technical./technical/government./technical/government/About_LSC./technical/government/Env_Prot_Agen./technical/government/Alcohol_Problems./technical/government/Gen_Account_Office./technical/government/Post_Rate_Comm./technical/government/Media./technical/plos./technical/biomed./technical/911report% 
+```
+The output differs from the regular print in the sense that all the output is strung together into one line, rather than printing with line breaks between each output. Interestingly, when I redirected this output into a `files.txt` file and printed the outputs, I got the one string of all the directories running into each other, but when I ran a word count on this file, I got 0 lines, 1 word, and 312 characters. I'm not sure why this evaluates to 0 lines, but it makes sense that it is 1 word since everything is jammed into each other.
+```
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -type d -print0 > files.txt
+monicapark@Monicas-MacBook-Air docsearch % cat files.txt
+./technical./technical/government./technical/government/About_LSC./technical/government/Env_Prot_Agen./technical/government/Alcohol_Problems./technical/government/Gen_Account_Office./technical/government/Post_Rate_Comm./technical/government/Media./technical/plos./technical/biomed./technical/911report%                   
+monicapark@Monicas-MacBook-Air docsearch % wc files.txt
+       0       1     312 files.txt
+monicapark@Monicas-MacBook-Air docsearch % 
+```
+
+Overall, this week's lab report taught me how to research more about each command, through resources like the terminal manual, chat gpt, and stack overflow, and will be useful for further exploration of commands in linux.
