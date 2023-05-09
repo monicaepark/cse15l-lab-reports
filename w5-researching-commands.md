@@ -1,7 +1,7 @@
-# Walkthrough: researching and running commands in linux
+# walkthrough: researching and running commands in linux
 in this week's lab report, we'll be researching about different commands in linux and running them in a directory called "technical" from a class repository called "docsearch."
 
-## Part 1: Researching commands
+## part 1: researching commands
 This week, we were given 3 commands we could explore further: `less`, `find` or `grep`. I wanted to know a little more about the differences between find and grep, and decided to do a quick google search. I landed at [this](https://stackoverflow.com/questions/43165447/what-is-the-difference-between-find-with-grep) stack overflow page, where I found this helpful response by TheSprinter:
 ![Image](/w5/w5-stack.png)
 
@@ -25,8 +25,8 @@ To find two more options, I decided to try chat gpt. I searched for "what comman
 ![Image](w5/w5-chatgpt.png)
 I will be exploring `-type` and `-print`. Print seems to be used in conjunction with a lot of the other commands, since the `find` command does not print the output to the terminal by default.
 
-## Part 2: -depth
+## part 2: -depth
 
-## Part 3: -maxdepth
-## Part 4: -type
-## Part 5: -print
+## part 3: -maxdepth
+## part 4: -type
+## part 5: -print
