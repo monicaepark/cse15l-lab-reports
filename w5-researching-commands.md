@@ -3,7 +3,7 @@ in this week's lab report, we'll be researching about different commands in linu
 
 ## Part 1: Researching commands
 This week, we were given 3 commands we could explore further: `less`, `find` or `grep`. I wanted to know a little more about the differences between find and grep, and decided to do a quick google search. I landed at [this](https://stackoverflow.com/questions/43165447/what-is-the-difference-between-find-with-grep) stack overflow page, where I found this helpful response by TheSprinter:
-![Image](/w5/w5-sprinter.png)
+![Image](/w5/w5-stack.png)
 
 Based on this response, I learned that find is used to filter through a directory to locate specific files or folders, while grep (short for globally search a regular expression 
 and print) searches through a specific file to find a specific pattern. This makes sense, since find takes the input of the command `find` followed by a directory, while `grep` 
