@@ -24,7 +24,7 @@ By scrolling down, I found a list of different  options we can use under the `fi
              it would not normally be evaluated.  “-maxdepth 0” limits the whole search to the
              command line arguments.
 ```
-To find two more options, I decided to try chat gpt. I searched for "what commands can i use with find in linux?" and got the response below:
+To find two more options, I decided to try chat gpt. I searched for "what commands can i use with find in linux?" and found:
 
 ![Image](w5/w5-chatgpt.png)
 
@@ -40,7 +40,31 @@ Example: find /home/user -type f -name "*.jpg" -print
 ```
 
 ## part 2: -depth
+`-depth` takes input n, and returns all files with a traversal of n relative to the starting point. in this demo, we are in the directory `technical`, and running the command with a depth of 1 should return all files directory inside the folder technical. I think the depth command is particularly useful as depth 1, because it finds all the files and directories directly inside a desired folder. It's like opening up a folder on a desktop and seeing what is directly inside just that one folder, without going deeper into the directories withiin that directory. Here's the command and output:
+```
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -depth 1
+./technical/government
+./technical/plos
+./technical/biomed
+./technical/911report
+```
+When I ran the command with a depth of 2, the list of directories and files overflowed the terminal, as there were too many items! The same goes for depth of 3. Finally, when I ran depth 4, there was no output, which means the maximum number of folders within folders is 3, and after that, there are no more nested folders. This command can be useful to do a quick search of how "deep" a directory is in terms of branched directories, to get a quick scan of how many things are inside the directory. Here's the command and (lack of) output:
+```
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -depth 4
+```
 
 ## part 3: -maxdepth
+`-maxdepth` takes input n and traverses a directory only until n depth. This command can be very useful when you don't want to search deeper into nested directories. I ran the commands with 0 and 1, and found that max depth returns just the command line directory for a depth of 0, and just the items within one folder for depth of 1. As the numbers increased, there were too many outputs that flooded the terminal, and so I would only use `-maxdepth` with small n's like 0, 1 or maybe 2 in the future. Here are the commands and ouputs for 0 and 1 under the technical directory:
+```
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -maxdepth 0
+./technical
+monicapark@Monicas-MacBook-Air docsearch % find ./technical -maxdepth 1
+./technical
+./technical/government
+./technical/plos
+./technical/biomed
+./technical/911report
+```
+
 ## part 4: -type
 ## part 5: -print
