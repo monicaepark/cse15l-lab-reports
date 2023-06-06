@@ -8,8 +8,8 @@ Hello! I am working on a mac OS in vscode, and am having trouble running the cod
 and am having trouble compiling and running my testers. When I run javac, the code seems to compile, but when I try to run java 
 on the specific file, nothing is running. I already tried to check what directory I am in by using ls to print out all my files 
 in the current directory, so I can't figure out why my ArrayTests won't run. Thank you for all your help!
-![Image](run-java-not-class.png)
 ```
+![Image](run-java-not-class.png)
 
 here's my example TA answer:
 ```
