@@ -23,7 +23,7 @@ after this, the student realizes that the .java extension should only be include
 Thank you so much for your help! I removed the .java in the java command, and was able to successfully run the code!
 ```
 
-##final reflection
+## final reflection
 even though CSE15L isn't required for my major (bioinformatics), it was still a fun experience getting to learn how to use the command line to make my coding life much easier. 
 i appreciated how transparent our professor was with AI learning and how we can effectively code in the 21st century, utilizing tools from the command line and also knowing how and to what extent we can utilize AI-aided code. 
 i especially enjoyed all the in person labs where we could collaborate with our peers and TAs, as it helped me play around with the tools we learned and actually apply my learning. 
